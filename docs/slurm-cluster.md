@@ -10,6 +10,7 @@ Table of Contents
 * [Support](#support)
 * [Basic Access and First Time Setup](#basic-access-and-first-time-setup)
 * [General Information](#general-information)
+  * [Rules](#rules)
   * [Available GPUs](#available-gpus)
   * [Software Modules](#software-modules)
   * [ERDA](#erda)
@@ -65,6 +66,14 @@ This will connect you to a (random) gateway server. Gateway servers are small, r
 
 ## General Information
 
+### Rules
+
+There are a few rules. Decided by the cluster user group and enforced by the system which it may be helpfull to be aware of
+
+1. there is a limit of 8 gpus per user, which means that any jobs exceeding this limit will be rejected at queue time
+2. the default timelimit for a job is 5 hours, which means that any job that does not have an explicit timelimit will terminate after 5 hours regardless if the job has finished.
+3. there is a max timelimit for a job of 48 hours. this means that all jobs will terminate after 48 hours regardless if the job has finished.
+ 
 ### Available GPUs
 
 The cluster currently hosts one main partition with the following GPU cards(TODO!):
@@ -72,12 +81,14 @@ The cluster currently hosts one main partition with the following GPU cards(TODO
 
 | Resource-Name   | Model                       | Count | Memory(GB) |
 |-----------------|-----------------------------|-------|----------- |
-| A100            | Nvidia A100                 |    14 | 40         |
+| H100            | Nvidia H100     80GB        |    4  | 80         |
+| A100            | Nvidia A100     40GB        |    14 | 40         |
+| A100            | Nvidia A100     80GB        |    14 | 80         |
 | A40             | Nvidia A40                  |    10 | 40         |
 | titanrtx        | Titan RTX + Quadro RTX 6000 |    48 | ??         |
 | titanx          | Titan X/Xp/V                |    24 | ??         |
-| testlak40       | Tesla K40                   |     2 | ??         |
-| testlak20       | Tesla K20                   |     1 | ??         |
+| testla k40      | Tesla K40                   |     2 | ??         |
+| testla k20      | Tesla K20                   |     1 | ??         |
 | gtx1080         | GTX 1080                    |     4 | ??         |
 
 
